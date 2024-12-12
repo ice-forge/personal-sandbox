@@ -1,11 +1,13 @@
 PRINCIPAL = 250  # current holdings
 MONTHLY_MONEY_DEPOSIT = 250  # deposit
 COMPOUND_FREQUENCY = 12  # monthly contributions
-RATE_OF_RETURN = 0.08  # yearly rate of return
+RATE_OF_RETURN = 0.08  # yearly rate of return // 40% = 3.33% p/m
 YEARS_SPENT_COMPOUNDING = 42  # years invested
 
-DIVIDEND_YIELD = 0.00132  # annual dividend yield: automatically reinvests with REINVEST_DIVIDENDS parameter // 0.132% dividend annual rate
-REINVEST_DIVIDENDS = True  # option to reinvest dividends anually
+DIVIDEND_YIELD = 0.00132  # annual dividend yield // 0.132% dividend annual rate
+REINVEST_DIVIDENDS = False  # option to reinvest dividends anually
+
+GOAL = 28640800
 
 def calculate_compound_interest(principal, money_deposit, rate_of_return, year_span, compound_frequency):
     total_periods = compound_frequency * year_span
@@ -43,4 +45,23 @@ else:
     future_value = calculate_compound_interest(PRINCIPAL, MONTHLY_MONEY_DEPOSIT, RATE_OF_RETURN, YEARS_SPENT_COMPOUNDING, COMPOUND_FREQUENCY)
     total_dividends = 0
 
-print(f"Predicted Outcome: [{future_value:,.2f}].\nDividend Payouts: [{total_dividends:,.2f}].\n\tTotal: [{future_value + total_dividends:,.2f}]")
+string_future_value = f"${future_value:,.2f}"
+string_total_dividends = f"${total_dividends:,.2f}"
+string_total = f"${(future_value + total_dividends):,.2f}"
+
+string_goal = f"${GOAL:,.2f}"
+string_estimated_time = "Lorem ipsum"
+
+# Define a width for alignment
+width = 35
+
+print(f"{'Predicted Outcome:':<{width}}" + string_future_value)
+print(f"{'Dividend Payouts:':<{width}}" + string_total_dividends)
+
+# Separator line matching total width
+print("-" * (width + len(string_total)))
+
+print(f"{'Total:':<{width}}" + string_total)
+
+print(f"\n{'Goal:':<{width}}" + string_goal)
+print(f"{'Estimated Time:':<{width}}" + string_estimated_time + " Years")
