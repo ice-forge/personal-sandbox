@@ -20,15 +20,25 @@ To get started with the project, follow these steps:
 
 2. Navigate to the project directory:
     ```bash
-    cd "personal-sandbox/ai-chatbot"
+    cd "personal-sandbox/ai chatbot"
     ```
 
-3. Install the necessary dependencies:
+3. Create a Virtual Environment:
+    ```bash
+    python -m venv venv
+    ```
+
+4. Activate the Virtual Environment:
+    ```bash
+    venv/scripts/activate
+    ```
+
+5. Install the necessary dependencies:
     ```bash
     pip install -r requirements.txt
     ```
 
-4. Set up the local configuration in the `.env` file.
+6. Set up the local configuration in the `.env` file.
 
 ## Usage
 Run the application:
