@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</head>
+<body data-conversation-id="{{ conversation_id if conversation_id else '' }}">
+    <div class="sidebar">
+        <button onclick="createConversation()">New Conversation</button>
+        <div id="conversation-list">
+            <!-- Conversation buttons will be added here -->
+        </div>
+    </div>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="dropdown">
+                <button id="current-model">ChatGPT 4o</button>
+                <div class="dropdown-content">
+                    <a href="javascript:void(0)" onclick="selectModel('ChatGPT 4o')">ChatGPT 4o</a>
+                    <!-- Add more models here -->
+                </div>
+            </div>
+            <div class="header-icons">
+                <button class="icon-button" onclick="editConversationName(currentConversationId)">✏️</button>
+                <button class="icon-button" onclick="deleteConversation(currentConversationId)">🗑️</button>
+                <button class="icon-button" onclick="logout()">👋</button>
+            </div>
+        </div>
+        <div class="chat-content" id="chat-content">
+            <!-- Conversation messages will go here -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="message-input" placeholder="Type a message..." oninput="toggleSendButton()" onkeypress="handleKeyPress(event)">
+            <button id="send-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</body>
+</html>
