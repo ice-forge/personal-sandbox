@@ -15,12 +15,12 @@ To get started with the project, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/ice-forge/personal-sandbox/ai-chatbot.git
+    git clone https://github.com/ice-forge/personal-sandbox.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd ai-chatbot
+    cd "personal-sandbox/ai-chatbot"
     ```
 
 3. Install the necessary dependencies:
