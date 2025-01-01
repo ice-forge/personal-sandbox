@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-from .local_db import load_users, save_users
+from .users_db import load_users, save_users
 from .smtp_utils import send_email
 
 import uuid
